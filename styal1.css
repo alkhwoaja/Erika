@@ -1,0 +1,254 @@
+/* ==========================================
+   1. التنسيقات العامة للعامة والخلفية
+   ========================================== */
+body {
+    /* تدرج أنيق ومريح للعين مناسب لمواقع السفر */
+    background: linear-gradient(#2a445f, #2c8da8 0%, #a6b271 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* ثبات التدرج أثناء التمرير */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   2. إزالة الخطوط وتنسيق الروابط (Links)
+   ========================================== */
+a {
+    text-decoration: none !important; /* إزالة الخط الأزرق تحت الكلمات والروابط */
+    color: inherit; /* جعل لون الخط يتكيف مع العناصر الداخلية */
+}
+
+/* ==========================================
+   3. العناوين والنصوص
+   ========================================== */
+h1 {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 25px;
+    color: rgb(252, 253, 255);
+    text-align: center;
+}
+
+h3 {
+    font-size: 25px;
+    color: rgb(241, 239, 239);
+    text-align: center;
+}
+
+p {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* ==========================================
+   4. قسم بطاقات الصور (المدن)
+   ========================================== */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+.image-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container a:hover img {
+    transform: scale(1.05); /* تأثير تكبير خفيف عند مرور الماوس */
+}
+
+/* ==========================================
+   5. قسم الفيديو (Glassmorphism Video)
+   ========================================== */
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.video-card {
+    width: 100%;
+    max-width: 850px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    outline: none;
+}
+
+.video-info {
+    text-align: center;
+    padding: 15px 10px 5px 10px;
+}
+
+.video-info h3 {
+    margin: 0 0 8px 0;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.video-info p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   6. حاوية وتصاميم الأزرار (Buttons)
+   ========================================== */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px auto;
+    width: 100%;
+}
+
+button {
+    position: relative;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 40em;
+    width: 8.5em;
+    height: 3em;
+    z-index: 1;
+    color: #1e1a52;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+button .text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 3em;
+    border-radius: 40em;
+    border: none;
+    background: rgba(255, 255, 255, 0.65);
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+button .blob {
+    position: absolute;
+    z-index: -1;
+    border-radius: 5em;
+    width: 5em;
+    height: 3em;
+    transition: transform 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+
+/* لوحة ألوان الأزرار الهادئة */
+button .blob:nth-child(2) {
+    left: 0em;
+    top: 0;
+    background: #2c3e50;
+}
+
+button .blob:nth-child(3) {
+    left: 1.8em;
+    top: 0;
+    z-index: -1;
+    background: #c5a059;
+}
+
+button .blob:nth-child(4) {
+    left: 4em;
+    top: -1em;
+    background: #708090;
+}
+
+button .blob:nth-child(5) {
+    left: 4.3em;
+    top: 1.6em;
+    background: #d8b4a0;
+}
+
+/* تأثير تحريك الماوس للأزرار */
+button:hover .blob:nth-child(2) {
+    background: #c5a059;
+}
+
+button:hover .blob:nth-child(3) {
+    background: #708090;
+}
+
+button:hover .blob:nth-child(4) {
+    background: #d8b4a0;
+}
+
+button:hover .blob:nth-child(5) {
+    background: #2c3e50;
+}
+
+button:hover .blob {
+    transform: scale(1.4);
+}
+
+button:active {
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}

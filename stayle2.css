@@ -1,0 +1,173 @@
+/* ==========================================
+   1. التنسيقات العامة والخلفية
+   ========================================== */
+body {
+    /* تدرج درامي وأنيق يناسب مواقع السفر */
+    background: linear-gradient(#2a445f, #2c8da8 0%, #a6b271 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    direction: rtl; /* الضبط للغة العربية */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+}
+
+/* ==========================================
+   2. العناوين والنصوص
+   ========================================== */
+h1 {
+    font-size: 42px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 26px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 15px 0;
+}
+
+.content-section {
+    margin-bottom: 40px;
+}
+
+/* ==========================================
+   3. تطوير مظهر الفيديو (زجاجي واحترافي)
+   ========================================== */
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.video-card {
+    width: 100%;
+    max-width: 750px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.video-wrapper {
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    outline: none;
+}
+
+/* ==========================================
+   4. تنسيق الصور وبجانبها النص على الشمال
+   ========================================== */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* بطاقات الصور والروابط */
+.image-container a {
+    display: flex;
+    flex-direction: row; /* جعل الصورة والنص أفقياً في نفس السطر */
+    align-items: center; /* محاذاة النص والصورة عمودياً مع المنتصف */
+    gap: 25px; /* المسافة بين الصورة والنص */
+    text-decoration: none !important; /* إزالة الخط الأزرق تحت الكلمات */
+    background: rgba(255, 255, 255, 0.08); /* خلفية زجاجية شفافة لكامل العنصر */
+    padding: 15px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* التأثير عند التمرير بالماوس على البطاقة */
+.image-container a:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateX(-5px); /* تحريك خفيف لليسار */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* مظهر وتحسين الصور */
+.image-container img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* لضمان عدم تشوه أو مط الصورة */
+    border-radius: 14px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.image-container a:hover img {
+    transform: scale(1.03); /* تكبير ناعم للصورة عند التمرير */
+}
+
+/* جعل النص والـ h2 يظهر على الشمال بشكل متناسق */
+.image-container a h2 {
+    text-align: right;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 600;
+}
+/* ==========================================
+   تنسيق الشعار العلوي وتوسيعه
+   ========================================== */
+.logo-container {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.logo-container a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 150px; /* يمكنك تعديل الحجم حسب الرغبة */
+    height: auto;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2)); /* إضافة ظل خفيف للبروز فوق الخلفية المتدرجة */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* تأثير حركة لطيف عند التمرير بالماوس فوق الشعار */
+.logo-container a:hover .logo-img {
+    transform: scale(1.08);
+    filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.3));
+}
