@@ -1,6 +1,4 @@
-/* ==========================================
-   1. التنسيقات العامة والخلفية
-   ========================================== */
+
 body {
     /* تدرج درامي وأنيق يناسب مواقع السفر */
     background: linear-gradient(#2a445f, #2c8da8 0%, #a6b271 100%);
@@ -16,9 +14,8 @@ body {
     color: #ffffff;
 }
 
-/* ==========================================
-   2. العناوين والنصوص
-   ========================================== */
+
+
 h1 {
     font-size: 42px;
     color: #ffffff;
@@ -47,9 +44,7 @@ p {
     margin-bottom: 40px;
 }
 
-/* ==========================================
-   3. تطوير مظهر الفيديو (زجاجي واحترافي)
-   ========================================== */
+
 .video-section {
     display: flex;
     justify-content: center;
@@ -90,9 +85,7 @@ p {
     outline: none;
 }
 
-/* ==========================================
-   4. تنسيق الصور وبجانبها النص على الشمال
-   ========================================== */
+
 .image-container {
     display: flex;
     flex-direction: column;
@@ -144,9 +137,7 @@ p {
     color: #ffffff;
     font-weight: 600;
 }
-/* ==========================================
-   تنسيق الشعار العلوي وتوسيعه
-   ========================================== */
+
 .logo-container {
     text-align: center;
     width: 100%;
@@ -170,4 +161,117 @@ p {
 .logo-container a:hover .logo-img {
     transform: scale(1.08);
     filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.3));
+}
+
+
+/* الحاوية الرئيسية لقسم التقييم والتعليقات */
+.sidebar #rating, 
+.sidebar #comments {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* تنسيق النجوم */
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    direction: ltr; /* لترتيب النجوم من اليسار لليمين */
+}
+
+.star {
+    font-size: 40px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
+
+/* لون النجمة عند التقييم */
+.star.rated {
+    color: #ffca28; /* لون ذهبي مشرق */
+    text-shadow: 0 0 10px rgba(255, 202, 40, 0.5);
+}
+
+/* نص التقييم (0/5) */
+#rating-value {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* مربع كتابة التعليق */
+#comment-box {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+#comment-box:focus {
+    border-color: #2c8da8;
+    box-shadow: 0 0 8px rgba(44, 141, 168, 0.5);
+}
+
+/* زر إضافة التعليق */
+#comment-button {
+    background: linear-gradient(135deg, #2c8da8 0%, #1e3c72 100%);
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#comment-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #3aa0be 0%, #2a5298 100%);
+}
+
+#comment-button:active {
+    transform: translateY(0);
+}
+
+/* قائمة التعليقات المضافة */
+#comment-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#comment-list li {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-right: 4px solid #ffca28; /* شريط ذهبي جانبي */
+    word-wrap: break-word;
+    font-size: 16px;
 }
