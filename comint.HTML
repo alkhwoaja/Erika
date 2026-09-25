@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <audio controls>
-        <source src="Comment.m4a">
-    </audio> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="website icon" type="png"
-    href="t.png">
-    <title> your comment</title>
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="stylesheet" href="styal1.css">
+    <link rel="website icon" type="image/png" href="t.png">
+    <title>التقييم والآراء - مسارات اريكا</title>
+    <!-- استدعاء ملف الـ CSS -->
+    <link rel="stylesheet" href="stayle2.css">
 </head>
 <body>
-    <div class="sidebar">
-    
-    <h1> رايكم بموقعنا </h1>
-    <h2>تقيمكم بنجوم </h2>
-    <div id="rating">
-        <div class="stars">
-            <span class="star" data-rating="1">&#9733;</span>
-            <span class="star" data-rating="2">&#9733;</span>
-            <span class="star" data-rating="3">&#9733;</span>
-            <span class="star" data-rating="4">&#9733;</span>
-            <span class="star" data-rating="5">&#9733;</span>
-        </div>
-        <p id="rating-value">0/5</p>
-    </div>
-    
-    <div id="comments">
-        <h2> رايكم خلال التعليق </h2>
-        <textarea id="comment-box" placeholder="تعليقاتكم لموقعنا "></textarea>
-        <button >أضف تعليق</button>
-        <ul id="comment-list"></ul>
+
+    <!-- قسم الشعار العلوي -->
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="t.png" alt="شعار أريكا للأسفار" class="logo-img">
+        </a>
     </div>
 
+    <!-- قسم التقييم والتعليقات -->
+    <div class="sidebar">
+        <h1>رأيكم بموقعنا</h1>
+        
+        <!-- قسم التقييم بالنظام النجمي -->
+        <div id="rating">
+            <h2>تقييمكم بالنجوم</h2>
+            <div class="stars">
+                <span class="star" data-rating="1">&#9733;</span>
+                <span class="star" data-rating="2">&#9733;</span>
+                <span class="star" data-rating="3">&#9733;</span>
+                <span class="star" data-rating="4">&#9733;</span>
+                <span class="star" data-rating="5">&#9733;</span>
+            </div>
+            <p id="rating-value">0/5</p>
+        </div>
+        
+        <!-- قسم إضافة التعليقات -->
+        <div id="comments">
+            <h2>شاركونا رأيكم بالتعليق</h2>
+            <textarea id="comment-box" placeholder="اكتب تعليقك هنا..."></textarea>
+            <button id="comment-button">أضف تعليق</button>
+            <ul id="comment-list"></ul>
+        </div>
+    </div>
+
+    <!-- كود البرمجة والتفاعل JS -->
     <script>
         const stars = document.querySelectorAll('.star');
         const ratingValue = document.getElementById('rating-value');
@@ -42,6 +51,7 @@
         const commentButton = document.getElementById('comment-button');
         const commentList = document.getElementById('comment-list');
 
+        // التفاعل مع النجوم
         stars.forEach(star => {
             star.addEventListener('click', () => {
                 const rating = parseInt(star.getAttribute('data-rating'));
@@ -56,6 +66,7 @@
             });
         });
 
+        // إضافة التعليق
         commentButton.addEventListener('click', () => {
             const comment = commentBox.value;
             if (comment.trim() !== '') {
@@ -66,5 +77,6 @@
             }
         });
     </script>
+
 </body>
 </html>
